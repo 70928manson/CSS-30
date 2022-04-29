@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;500;700&display=swap" rel="stylesheet">
+    <title>互動圖文卡片</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .wrap{
+            width: 100%;
+            display: flex; /*讓item橫向排列*/
+        }
+        .item{
+            width: 25%;
+            position: relative;
+        }
+        .item img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .item .txt{
+            position: absolute; /*定在父層item上*/
+            /*文字in圖片*/
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, .6);
+            /*文字at圖片中間*/
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            /*hover至圖片 文字出現*/
+            opacity: 0;
+            transition: opacity .5s;
+        }
+        .item:hover .txt{
+            opacity: 1;
+        }
+        .item h2{
+            font-size: 32px;
+            color: #ff0;
+            font-weight: 700;
+        }
+        .item h2:after{
+            content: '';
+            display: block;
+            width: 0%;
+            height: 2px;
+            margin: 10px 0;
+            background-color: #ff0;
+            transition: width .5s .2s;
+        }
+        .item:hover h2:after{
+            width: 100%;
+        }
+        .item p{
+            font-size: 18px;
+            color: #fff;
+            font-weight: 500;
+        }
+        .yo{
+            width: 100%;
+            text-align: center;
+            margin-top: 25vh;
+        }
+        .yo h2{
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="item">
+            <img src="https://picsum.photos/500/400?random=10" alt="">  <!--絕對定位-->
+            <div class="txt">
+                <h2>這個網頁畫面怎麼切: 互動圖文卡片</h2>
+                <p>互動圖文卡片好像在很多網頁中常常看到</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/500/400?random=5" alt="">
+            <div class="txt">
+                <h2>聽說這種版又被稱作稀飯版，因為跟稀飯一樣常見</h2>
+                <p>前端需要把切版學好，千萬不能一直依賴框架QQ</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/500/400?random=20" alt="">
+            <div class="txt">
+                <h2>不知道你有沒有聽過網頁的都市傳說，那個流傳已久的謠言</h2>
+                <p>網頁都市傳說很多種，其中一個就是子層絕對定位父層就要相對定位 = U =</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/500/400?random=30" alt="">
+            <div class="txt">
+                <h2>網路上有許多線上前端自學資源</h2>
+                <p>唯須注意查到的資訊是否過時，不然可能會花大把時間發現做白工QwQ</p>
+            </div>
+        </div>
+    </div>
+    <div class="yo">
+        <h2>把滑鼠移到圖片會有神奇的東西</h2>
+    </div>
+</body>
+</html>
