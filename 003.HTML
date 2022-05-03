@@ -38,19 +38,65 @@
             text-align: center;
             background-color: #fff;
             border: 1px solid #ccc;
+            transform: translateY(0px);
+            transition: .3s;
+        }
+        .item:hover{
+            transform: translateY(-5%);
         }
         .item img{
             width: 100%;
+            vertical-align: middle; /*垂直對齊 消除圖片與三角形的距離*/
         }
         .item h2{
             border-bottom: 1px solid #888;
             padding-bottom: .3em;
             margin-bottom: .3em;
             font-weight: 900;
+            transition: .2s;
         }
         .item p{
             line-height: 1.5;
-            font-weight: 100;
+            font-weight: 300;
+            transition: .2s;
+        }
+        .item .txt{
+            padding: 20px;
+            position: relative;
+            height: 175px;
+        }
+        .item .txt::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            /*三角形 以邊框線製作*/
+            border-top: 50px solid transparent;  /*50px代表三角形高度*/
+            border-left: 184px solid #fff;  /*184為item內容長度*/
+            border-right: 184px solid #fff;
+            transform: translateY(-98%); /*y軸移動*/
+
+        }
+        .item:hover{
+            transform: translateY(-50px);
+        }
+        .item:hover .txt{
+            background-image: linear-gradient(0deg, #FB8076, #FEB85D);  /*由上而下漸層色*/
+        }
+        .item:hover .txt::before{
+            border-left: 184px solid #FEB85D;
+            border-right: 184px solid #FEB85D;
+        }
+        .item:hover h2{
+            color: #fff;
+            border-bottom-color: #fff;
+        }
+        .item:hover p{
+            color: #fff;
         }
     </style>
 </head>
@@ -78,7 +124,7 @@
         <div class="item">
             <img src="https://picsum.photos/300/300?random=30" alt="">
             <div class="txt">
-                <h2>《Github user repos search》</h2>
+                <h2>《Github repos search》</h2>
                 <p>以React開發的Github使用者repo搜尋網，輸入Github使用者名稱便會列出其repositories，
                     每個repo可點擊查看細節與github連結</p>
             </div>
