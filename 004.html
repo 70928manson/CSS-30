@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>交錯漂浮版</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;500;700&display=swap" rel="stylesheet">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            padding: 100px 0;
+            background: linear-gradient(20deg, #3d5493, #1aa2e0) fixed center center / 100% 100%;
+        }
+        .wrap{
+            width: 1200px;
+            margin: auto;
+        }
+        .item{
+            display: flex;
+            align-items: center;
+            margin-bottom: 70px;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .item h2{
+            font-weight: 900;
+        }
+        .item p{
+            font-weight: 300;
+        }
+        .item .pic{
+            width: 55%;
+        }
+        .item .pic img{
+            /*使圖片符合div pic大小*/
+            width: 100%;
+            vertical-align: middle;
+        }
+        .item .txt{
+            width: 55%;
+            flex-shrink: 0;
+            padding: 50px 30px;
+            box-sizing: border-box;
+            /*文字在上*/
+            position: relative;
+            z-index: 1;
+        }
+        .item > :first-child{  /*選取第一層物件*/
+            margin-right: -10%;
+        }
+        .item:nth-child(1) .txt{
+            background-color: rgba(240, 174, 193, .7);
+        }
+        .item:nth-child(2) .txt{
+            background-color: rgba(42, 253, 208, .7);
+        }
+        .item:nth-child(3) .txt{
+            background-color: rgba(254, 201, 121, .7);
+        }
+        .item:nth-child(4) .txt{
+            background-color: rgba(149, 219, 214, .7);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- item 1 -->
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/600/350?random=10" alt="">
+            </div>
+            <div class="txt">
+                <h2>聽說金魚都懂的切版</h2>
+                <p>坊間傳說金魚只有七秒的記憶，但其實金魚的記憶力不只七秒，其記憶力最短可達到3天，長可至3個月</p>
+            </div>
+        </div>
+        <!-- item 2 -->
+        <div class="item">
+            <div class="txt">
+                <h2>第九屆《沉浮北夢》2021</h2>
+                <p>奮力搭上經濟起飛的列車前往臺北的人們，究竟能否如願衣錦還鄉，還是會失速墜落在燈紅酒綠中?
+
+                    繁華的台北總讓人迷失。男主角阿成背負著讓生活更好的夢想來到這座城市，肩負養家責任的他期許自己盡快出人頭地。
+
+                    同事的排擠和上司的歧視讓阿成的台北夢更加艱困，這些挫敗削弱了他對台北夢的執著，阿成的下一步到底該何去何從….</p>
+            </div>
+            <div class="pic">
+                <img src="https://picsum.photos/600/350?random=15" alt="">
+            </div>
+        </div>
+        <!-- item 3 -->
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/600/350?random=20" alt="">
+            </div>
+            <div class="txt">
+                <h2>第八屆《無人接聽》2020</h2>
+                <p>曾經懷揣夢想、努力抗爭的自己已經對這個社會和生活失望，又或許只是自己老了，更年輕的心正在這個城市裡吶喊著權利。
+
+                    二零一四年太陽花學運爆發，姐姐的女兒馥言執意要北上參加，
+                    學文接到姐姐的請求，在這段時間幫忙照顧馥言。
+                    
+                    學文透過姪女馥言參加學運的身影，
+                    想起了當年的野百合學運、以及參與的姊姊和自己。
+                    
+                    家庭和社會新舊色彩的碰撞，
+                    如今，新的世代在不同的背景下捲土重來…….</p>
+            </div>
+        </div>
+        <!-- item 4 -->
+        <div class="item">
+            <div class="txt">
+                <h2>第七屆《浮生》2019</h2>
+                <p>我們這個樣子倒像是那些海上的浮木，連要去哪裡都不是自己可以決定的。
+
+                    張慕鴻，退役軍人。
+                    
+                    看見抗戰勝利後，國民政府貪汙腐敗的亂象，而為國家出生入死的自己卻淪落為社會底層。不滿、自卑和渴望作祟下，
+                    他出賣了自己，捲入政府派系鬥爭的漩渦，並在過程意外得知自己的妹妹是名共產黨員。
+                    
+                    究竟該如何面對？國民政府和共產黨之間，真的有正義、邪惡的一方嗎？
+                    
+                    在這烽火連天的時代，始終不知道前方等著自己的是生、是死、還是異鄉。
+                    即使前途未卜，被時代推著走的人們仍奮不顧身地往前…</p>
+            </div>
+            <div class="pic">
+                <img src="https://picsum.photos/600/350?random=25" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
