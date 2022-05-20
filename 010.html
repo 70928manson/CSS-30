@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>方塊酥版面</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style type="text/css">
+        @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;500;700&display=swap");
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        body{
+            background-color: #000;
+        }
+        .wrap{
+            width: 100%; /*滿版 加上 padding*/
+            margin: auto;
+            overflow: hidden; /*讓父層抓到所有子層的高度*/
+        }
+        .item{
+            float: left;
+            position: relative; /*文字區*/
+        }
+        .item img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .item:first-child{
+            width: 50%;
+        }
+        .item:first-child ~ .item{
+            width: 25%;
+        }
+        .item .txt{
+            position: absolute; /*將文字訂在圖片裡面*/
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 15px;
+            text-align: center;
+            color: #fff;
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, .6);
+            display: flex; /* 垂直置中設定 */
+            opacity: 0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: scale(0);
+            transition: .5s; /*淡入淡出*/
+        }
+        .item:hover .txt{
+            transform: scale(1);
+           opacity: 1; /*hover時讓圖片出現*/
+        }
+        .item h3{
+            margin-bottom: .4em;
+        }
+        .item p{
+            font-weight: 100;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="item">
+            <img src="https://picsum.photos/500/500?random=10" alt="">
+            <div class="txt">
+                <h3>成大歷史傳情</h3>
+                <p>你也有想要一生一世相守的人嗎？
+                    又或是有心儀的的對象？
+                    歷史傳情提供各種小物
+                    就讓成大歷史幫助你將全部的心意傳遞給他/她吧！</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/500/500?random=12" alt="">
+            <div class="txt">
+                <h3>成大歷史公演</h3>
+                <p>歷史公演為成大歷史學系的年度盛事，
+                    將史實以平近易懂的方式呈現在大眾面前。</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/500/500?random=15" alt="">
+            <div class="txt">
+                <h3>公演的前世今生</h3>
+                <p>九屆以來持續推出
+                  【白色恐怖】、【日治時期】、【國共內戰】等不同時代背景的作品。</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/500/500?random=18" alt="">
+            <div class="txt">
+                <h3>第九屆《沉浮北夢》2021</h3>
+                <p>奮力搭上經濟起飛的列車前往臺北的人們，究竟能否如願衣錦還鄉，還是會失速墜落在燈紅酒綠中?</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/500/500?random=20" alt="">
+            <div class="txt">
+                <h3>第八屆《無人接聽》2020</h3>
+                <p>曾經懷揣夢想、努力抗爭的自己已經對這個社會和生活失望，又或許只是自己老了，更年輕的心正在這個城市裡吶喊著權利。</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
