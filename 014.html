@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>收合式側邊選單</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+    <style type="text/css">
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css");
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;500;700&display=swap");
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        html, body{
+            height: 100%;
+        }
+        body{
+            background-color: #546377;
+        }
+        .side-menu{
+            position: relative;
+            width: 300px;
+            height: 100%;
+            padding: 50px 0;
+            box-sizing: border-box; /*解決出現scroll bar的問題*/
+            background-image: linear-gradient(0deg, #3381b0, #c2196c); /*0deg 由上至下*/
+            display: flex;
+            flex-direction: column;
+            box-shadow: 5px 0px 10px hsla(240, 40%, 15%, .6);
+            transform: translateX(-100%);
+            transition: .3s ease;
+        }
+        .side-menu form{
+            display: flex;
+            margin: 0 10px 40px;
+            border-radius: 100px;
+            border: 1px solid rgb(255, 255, 255, .4);
+        }
+        .side-menu form input,
+        .side-menu form button{
+            border: none;
+            background-color: transparent;
+            color: #fff;
+            padding: 5px 10px;
+        }
+        .side-menu form input{
+            width: 230px;
+        }
+        .side-menu form button{
+            width: 50px;
+        }
+        .side-menu form input,
+        .side-menu form button:focus{
+            outline: none;  /*重要*/
+        }
+        .side-menu label{
+            position: absolute;
+            width: 40px;
+            height: 80px;
+            background-color: #000;
+            color: #fff;
+            right: -40px;  /*因為寬度為40*/
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            line-height: 80px; /*單行文字垂直置中技巧*/
+            text-align: center;
+            font-size: 30px;
+            border-radius: 0 20px 20px 0;
+        }
+        #side-menu-switch{
+            display: none;
+        }
+        #side-menu-switch:checked + .side-menu{
+            transform: translateX(0);
+        }
+        #side-menu-switch:checked + .side-menu label .fa{
+            transform: scaleX(-1);
+        }
+        nav a{
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+            position: relative;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        nav a i{
+            padding: 0 10px 0 0;
+        }
+        nav a + a::before{
+            content: '';
+            position: absolute;
+            border-top: 1px solid rgb(255, 255, 255, .4);
+            left: 10px;
+            right: 10px;
+            top: 0;
+        }
+        nav a .fa{
+            margin-right: -1.1em;
+            transform: scale(0);
+            transition: .3s;
+        }
+        nav a:hover .fa{
+            margin-right: 0em;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" name="" id="side-menu-switch">
+    <div class="side-menu">
+        <form>
+            <input type="search" placeholder="請輸入關鍵字">
+            <button><i class="fa fa-search"></i></button>
+        </form>
+        <nav>
+            <a href="#">
+                <i class="fa fa-users" aria-hidden="true"></i>鐵人賽
+            </a>
+            <a href="https://nckuhistorydrama.com/?fbclid=IwAR06CGORJq5Pn5SZ1wKNDGacMWZQ0gxfVSEymNZrUoVtFWhK4BaFiRyMIeM">
+                <i class="fa fa-gavel" aria-hidden="true"></i>歷史公演
+            </a>
+            <a href="https://70928manson.github.io/NCKU-History-convey-affection/#/">
+                <i class="fa fa-object-group" aria-hidden="true"></i>歷史傳情
+            </a>
+            <a href="https://70928manson.github.io/react-github-api-pratice/">
+                <i class="fa fa-globe" aria-hidden="true"></i>github search
+            </a>
+            <a href="https://github.com/70928manson?tab=repositories">
+                <i class="fa fa-cutlery" aria-hidden="true"></i>Manson's github repositories
+            </a>
+        </nav>
+        <label for="side-menu-switch">
+            <i class="fa fa-angle-right"></i>
+        </label>
+    </div>
+</body>
+</html>
